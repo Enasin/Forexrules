@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Discipline Rulebook</title>
+
+<style>
+:root {
+  --bg: #0f1115;
+  --text: #eaeaea;
+  --card: #1a1d24;
+  --accent: #4da3ff;
+  --danger: #ff4d4d;
+}
+
+body.light {
+  --bg: #f5f6f8;
+  --text: #111;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --danger: #ff4d4d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* NAVBAR */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+/* SECTIONS */
+section { padding: 3rem 1.5rem; max-width: 1100px; margin: auto; }
+
+section h2 { margin-bottom: 1rem; font-size: 1.9rem; text-align: center; }
+
+.subtitle { text-align: center; opacity: 0.8; margin-bottom: 2rem; }
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card h3 {
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+}
+
+.card.danger h3 { color: var(--danger); }
+
+ul { list-style: none; }
+ul li { margin-bottom: 0.5rem; }
+
+/* FOOTER */
+footer { text-align: center; padding: 2rem; opacity: 0.7; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    display: none;
+    padding: 1rem;
+  }
+
+  .nav-links.show { display: flex; }
+
+  .hamburger { display: block; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div>
+      <button class="toggle-btn" onclick="toggleTheme()">🌓</button>
+      <span class="hamburger" onclick="toggleMenu()">☰</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#rules">Rules</a>
+      <a href="#dos-donts">Do & Don’t</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <h1>Forex Discipline Rulebook</h1>
+  <p>Professional training mindset — discipline first, money later.</p>
+</section>
+
+<!-- RULES -->
+<section id="rules">
+  <h2>🔒 FINAL FOREX RULES</h2>
+  <p class="subtitle">($5 Training Account → $5,000 Funded Mindset)</p>
+
+  <div class="cards">
+    <!-- FIXED CONDITIONS -->
+    <div class="card">
+      <h3>Fixed Conditions (Non-Negotiable)</h3>
+      <ul>
+        <li>💰 Account balance: $5</li>
+        <li>📊 Pairs: EURUSD & XAUUSD ONLY</li>
+        <li>📉 Lot size: 0.0050 ONLY</li>
+        <li>📆 Training period: 30 days</li>
+        <li>🎯 Goal: Discipline & consistency — NOT money</li>
+        <li>❌ No rule changes</li>
+        <li>❌ No extra trades</li>
+        <li>❌ No emotions</li>
+        <li>❌ No excuses</li>
+      </ul>
+    </div>
+
+    <!-- CAPITAL & RISK -->
+    <div class="card">
+      <h3>Capital & Risk Rules</h3>
+      <ul>
+        <li>Risk per trade: MAX 2% ($0.10)</li>
+        <li>Stop-Loss mandatory</li>
+        <li>RR minimum: 1 : 1.5</li>
+        <li>❌ Never increase lot size</li>
+        <li>❌ Never widen SL</li>
+        <li>❌ Never remove SL</li>
+        <li>❌ Never add positions</li>
+        <li>If SL is hit → accept silently and stop</li>
+      </ul>
+    </div>
+
+    <!-- PAIRS & SESSIONS -->
+    <div class="card">
+      <h3>Pairs & Sessions (Strict)</h3>
+      <ul>
+        <li>✅ EURUSD → London (10:00 – 13:00 EAT)</li>
+        <li>✅ XAUUSD (Gold) → New York (16:30 – 19:00 EAT)</li>
+        <li>❌ No trading outside session</li>
+        <li>❌ No switching pairs</li>
+        <li>❌ No revenge trades</li>
+      </ul>
+    </div>
+
+    <!-- DAILY TRADE LIMITS -->
+    <div class="card">
+      <h3>Daily Trade Limits</h3>
+      <ul>
+        <li>MAX 1 trade per pair</li>
+        <li>MAX 2 trades per day</li>
+        <li>1 win → STOP FOR THE DAY</li>
+        <li>2 losses → STOP FOR THE DAY</li>
+      </ul>
+    </div>
+
+    <!-- ENTRY RULES -->
+    <div class="card">
+      <h3>Entry Rules</h3>
+      <ul>
+        <li>1️⃣ Daily bias is clear (BUY or SELL only)</li>
+        <li>2️⃣ Liquidity taken (PDH / PDL / EQH / EQL)</li>
+        <li>3️⃣ Price returns to OB or FVG</li>
+        <li>4️⃣ Correct session time</li>
+        <li>5️⃣ RR ≥ 1 : 1.5</li>
+        <li>❌ If ONE condition is missing → NO TRADE</li>
+      </ul>
+    </div>
+
+    <!-- STOP-LOSS DISCIPLINE -->
+    <div class="card">
+      <h3>Stop-Loss Discipline (Critical)</h3>
+      <ul>
+        <li>SL placed before entry</li>
+        <li>SL never moved backward</li>
+        <li>SL never removed</li>
+        <li>✔ You may move SL to BE only after 1R</li>
+      </ul>
+    </div>
+
+    <!-- PSYCHOLOGY RULES -->
+    <div class="card">
+      <h3>Psychology Rules</h3>
+      <ul>
+        <li>No trading when angry, excited, fearful, tired, or chasing price</li>
+      </ul>
+    </div>
+
+    <!-- JOURNAL RULE -->
+    <div class="card">
+      <h3>Journal Rule</h3>
+      <ul>
+        <li>Date, Pair, Session, Bias, Setup, SL/TP, Result, Emotion, Rules followed</li>
+      </ul>
+    </div>
+
+    <!-- WEEKLY DISCIPLINE CHECK -->
+    <div class="card">
+      <h3>Weekly Discipline Check</h3>
+      <ul>
+        <li>Day 7, 14, 21, 28</li>
+      </ul>
+    </div>
+
+    <!-- CAPITAL PROTECTION -->
+    <div class="card danger">
+      <h3>Capital Protection Rule</h3>
+      <ul>
+        <li>❌ If balance drops to $3 → STOP trading for 3 days</li>
+      </ul>
+    </div>
+
+    <!-- 30-DAY TRAINING PHASES -->
+    <div class="card">
+      <h3>30-Day Professional Training Phases</h3>
+      <ul>
+        <li>Days 1–10: CONTROL</li>
+        <li>Days 11–20: CONSISTENCY</li>
+        <li>Days 21–30: FUNDED-TRADER MODE</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DO & DONT -->
+<section id="dos-donts">
+  <h2>Do’s & Don’ts</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>✅ DO</h3>
+      <ul>
+        <li>Trade only during your assigned session</li>
+        <li>Follow your daily bias strictly</li>
+        <li>Use Stop-Loss on every trade</li>
+        <li>Respect 1 trade win / 2 loss daily limit</li>
+        <li>Journal every trade honestly</li>
+        <li>Accept losses calmly</li>
+        <li>Stop trading when rules say stop</li>
+      </ul>
+    </div>
+
+    <div class="card danger">
+      <h3>❌ DON’T</h3>
+      <ul>
+        <li>Overtrade or revenge trade</li>
+        <li>Change lot size or rules</li>
+        <li>Trade outside your session</li>
+        <li>Move or remove Stop-Loss</li>
+        <li>Trade emotionally</li>
+        <li>Chase price</li>
+        <li>Ignore your journal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Yasin. All rights reserved.
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle("light");
+  }
+</script>
+
+</body>
+  </html>
